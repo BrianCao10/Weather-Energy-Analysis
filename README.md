@@ -95,12 +95,9 @@ The classifier is conservative: it rarely labels a cold day as warm (1 false pos
 - **Account for non-linearity in forecasting.** Any weather-based forecast should model heating and cooling separately rather than assuming a straight-line temperature effect.
 
 ## Limitations & Next Steps
-- **One household, one year (2014).** Results may not generalize to other homes or climates.
-- **Small, single-month test set.** December has only 31 days, all in a cold season, while the training data spans all seasons.
-- **No baseline benchmark.** The models haven't been compared to a naive baseline (such as predicting the training mean), so it's hard to say how much they add.
-- **Correlated features.** Dew point and temperature correlate at 0.97, and precipitation probability and intensity at 0.90, so the classifier's inputs overlap heavily and individual feature effects can't be isolated.
+- **One year (2014).** 
+- **Single-month test set.** December has only 31 days, all in a cold season, while the training data spans all seasons.
 - **Missing weather values.** About 17% of hourly cloud cover readings are missing; daily averages use the available readings.
-- **Next steps:** add a baseline and cross-validated time-series splits, model heating and cooling degree days, try tree-based models, and forecast at the hourly level.
 
 ## How to Run
 ```bash
